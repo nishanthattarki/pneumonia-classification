@@ -52,7 +52,7 @@ st.title("🩺 Pneumonia Classifier (Ternary)")
 uploaded_file = st.file_uploader("Upload a Chest X-ray", type=["jpg", "jpeg", "png"])
 if uploaded_file:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded X-ray", use_column_width=True)
+    st.image(image, caption="Uploaded X-ray", use_container_width=True)
 
     if st.button("Classify"):
         img_array = preprocess_image(image)
@@ -85,7 +85,7 @@ if uploaded_file:
         st.subheader("Grad-CAM Visualization")
         heatmap = make_gradcam_heatmap(img_array, model)
         gradcam_img = overlay_heatmap(image, heatmap)
-        st.image(gradcam_img, caption="Grad-CAM", use_column_width=True)
+        st.image(gradcam_image, caption="Grad-CAM", use_container_width=True)
 
         # Disclaimer
         st.markdown("""
