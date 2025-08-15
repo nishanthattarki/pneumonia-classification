@@ -85,7 +85,7 @@ if uploaded_file:
         st.subheader("Grad-CAM Visualization")
         heatmap = make_gradcam_heatmap(img_array, model)
         gradcam_img = overlay_heatmap(image, heatmap)
-        st.image(gradcam_image, caption="Grad-CAM", use_container_width=True)
+        st.image(gradcam_img, caption="Grad-CAM", use_container_width=True)
 
         # Disclaimer
         st.markdown("""
